@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AI Engineering is developing an automated mobile sheep-shearing system in Swansea, Wales.">
+  <title>AI Engineering | Automated Sheep-Shearing Innovation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --red:#d9272e; --ink:#101010; --muted:#a9a9a9; --paper:#f5f5f3; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; font-family:Inter,Arial,sans-serif; color:#fff; background:var(--ink); }
+    a { color:inherit; text-decoration:none; }
+    .wrap { width:min(1120px, calc(100% - 40px)); margin:auto; }
+    header { border-bottom:1px solid #292929; background:#0b0b0b; }
+    .nav { min-height:82px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .brand { display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.13em; }
+    .brand-mark { color:var(--red); font-family:"Barlow Condensed",sans-serif; font-size:35px; line-height:1; letter-spacing:-.04em; }
+    .brand small { display:block; font-size:10px; color:#aaa; letter-spacing:.28em; margin-top:3px; }
+    nav { display:flex; gap:28px; align-items:center; font-size:13px; color:#ddd; }
+    nav a:hover { color:#ff555b; }
+    .nav-cta { background:var(--red); padding:12px 17px; font-weight:700; border-radius:3px; }
+    .hero { position:relative; overflow:hidden; padding:100px 0 92px; background:linear-gradient(110deg,#090909 0%,#171717 64%,#260d0e 100%); }
+    .hero:after { content:""; position:absolute; width:480px; height:480px; border:1px solid rgba(217,39,46,.22); border-radius:50%; right:-120px; top:-160px; box-shadow:0 0 0 45px rgba(217,39,46,.035),0 0 0 95px rgba(217,39,46,.025); }
+    .hero-inner { position:relative; z-index:1; max-width:790px; }
+    .eyebrow { color:#ff5b60; font-size:11px; letter-spacing:.25em; font-weight:800; text-transform:uppercase; }
+    h1,h2,h3 { font-family:"Barlow Condensed",Impact,sans-serif; text-transform:uppercase; margin:0; }
+    h1 { font-size:clamp(48px,8vw,90px); line-height:.94; letter-spacing:-.015em; margin:20px 0; }
+    h1 span { color:var(--red); }
+    .lead { max-width:650px; color:#c9c9c9; font-size:17px; line-height:1.8; }
+    .actions { display:flex; gap:13px; flex-wrap:wrap; margin-top:32px; }
+    .btn { display:inline-block; padding:15px 21px; border:1px solid #555; border-radius:3px; font-weight:700; font-size:13px; }
+    .btn.primary { background:var(--red); border-color:var(--red); }
+    .status { display:inline-flex; align-items:center; gap:9px; margin-top:35px; padding:9px 12px; border:1px solid #4a292a; color:#f1c5c6; font-size:11px; letter-spacing:.12em; text-transform:uppercase; }
+    .dot { width:7px; height:7px; border-radius:50%; background:#f0444a; }
+    .section { padding:82px 0; }
+    .section.light { background:var(--paper); color:#151515; }
+    .section.dark { background:#111; }
+    .section-head { max-width:690px; margin-bottom:38px; }
+    h2 { font-size:clamp(37px,5vw,58px); line-height:1; margin:12px 0 15px; }
+    .section p { line-height:1.8; color:#666; }
+    .dark p { color:#b7b7b7; }
+    .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .card { background:#fff; border:1px solid #e3e3e3; padding:26px; min-height:205px; }
+    .card .num { color:var(--red); font-family:"Barlow Condensed",sans-serif; font-size:35px; }
+    .card h3 { font-size:27px; margin:12px 0 8px; }
+    .card p { margin:0; font-size:14px; }
+    .project { display:grid; grid-template-columns:1fr 1fr; gap:55px; align-items:center; }
+    .project-art { min-height:330px; background:linear-gradient(145deg,#242424,#0c0c0c); border:1px solid #343434; display:flex; align-items:center; justify-content:center; padding:30px; position:relative; overflow:hidden; }
+    .project-art:before { content:""; position:absolute; width:230px; height:230px; border:2px solid rgba(217,39,46,.5); border-radius:50%; }
+    .lorry { position:relative; z-index:1; text-align:center; }
+    .lorry .icon { font-size:90px; filter:grayscale(1); }
+    .lorry strong { display:block; font-family:"Barlow Condensed",sans-serif; font-size:28px; letter-spacing:.08em; }
+    .steps { display:grid; gap:16px; margin-top:25px; }
+    .step { display:flex; gap:16px; align-items:flex-start; }
+    .step b { color:var(--red); font-family:"Barlow Condensed",sans-serif; font-size:25px; }
+    .step span { color:#ccc; line-height:1.65; font-size:14px; }
+    .logo-panel { background:#fff; border-radius:4px; padding:16px; display:flex; align-items:center; justify-content:center; }
+    .logo-panel img { display:block; width:min(100%,520px); height:auto; }
+    .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:30px; }
+    .contact-box { border:1px solid #333; padding:25px; }
+    .contact-box h3 { font-size:28px; margin-bottom:12px; }
+    .contact-box p { margin:5px 0; }
+    .placeholder { color:#ffb4b6 !important; font-size:12px !important; margin-top:14px !important; }
+    footer { border-top:1px solid #2b2b2b; padding:25px 0; color:#888; font-size:12px; }
+    footer .foot { display:flex; justify-content:space-between; gap:15px; flex-wrap:wrap; }
+    @media(max-width:760px) {
+      .nav { padding:15px 0; align-items:flex-start; flex-direction:column; }
+      nav { width:100%; flex-wrap:wrap; gap:15px; }
+      .hero { padding:75px 0 70px; }
+      .cards,.project,.contact-grid { grid-template-columns:1fr; }
+      .project { gap:30px; }
+      .section { padding:62px 0; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#home" aria-label="AI Engineering home">
+      <span class="brand-mark">AI</span>
+      <span>AI ENGINEERING<small>WALES · UNITED KINGDOM</small></span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#project">Our project</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="wrap hero-inner">
+      <div class="eyebrow">Engineering innovation · Swansea, Wales</div>
+      <h1>Re-thinking<br><span>sheep shearing.</span></h1>
+      <p class="lead">AI Engineering is developing an automated, mobile sheep-shearing concept designed to bring a new approach to the shearing process.</p>
+      <div class="actions">
+        <a class="btn primary" href="#project">Discover the project</a>
+        <a class="btn" href="#contact">Get in touch</a>
+      </div>
+      <div class="status"><i class="dot"></i> Project currently in development</div>
+    </div>
+  </section>
+
+  <section class="section light" id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">About AI Engineering</div>
+        <h2>Built around a bold idea.</h2>
+        <p>Based in Birchgrove, Swansea, AI Engineering is working on an ambitious agricultural engineering concept. Our focus is the design and development of a mobile system intended to make the sheep-shearing process more streamlined.</p>
+      </div>
+      <div class="cards">
+        <article class="card"><div class="num">01</div><h3>Welsh roots</h3><p>Based in Swansea, with a practical, problem-solving approach to engineering.</p></article>
+        <article class="card"><div class="num">02</div><h3>Fresh thinking</h3><p>Exploring an automated approach to a traditional agricultural process.</p></article>
+        <article class="card"><div class="num">03</div><h3>In development</h3><p>The concept is being designed. More project details will be shared as development progresses.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark" id="project">
+    <div class="wrap project">
+      <div>
+        <div class="eyebrow">The development project</div>
+        <h2>A mobile shearing concept.</h2>
+        <p>The proposed system is designed around a 44-tonne lorry and trailer. Sheep would enter at the rear using a ramp, move through a planned automated shearing process, and leave through a side exit nearer the front of the trailer.</p>
+        <div class="steps">
+          <div class="step"><b>01</b><span><strong>Rear loading</strong><br>Sheep enter the trailer via a purpose-designed ramp.</span></div>
+          <div class="step"><b>02</b><span><strong>Automated process</strong><br>The internal system is being designed to carry out the shearing process.</span></div>
+          <div class="step"><b>03</b><span><strong>Side exit</strong><br>Sheep are planned to leave through a side door towards the front of the trailer.</span></div>
+        </div>
+        <p style="font-size:12px;color:#888;margin-top:24px;">Concept description only. The machine is currently in the design stage; no performance or safety claims are being made.</p>
+      </div>
+      <div class="project-art" aria-label="Illustrative lorry graphic">
+        <div class="lorry"><div class="icon">🚛</div><strong>44-TONNE MOBILE SYSTEM</strong><span style="color:#aaa;font-size:11px;letter-spacing:.16em;">CONCEPT IN DEVELOPMENT</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section light">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Our identity</div>
+        <h2>AI Engineering, Wales.</h2>
+        <p>Red and black branding with a Welsh-inspired identity.</p>
+      </div>
+      <div class="logo-panel"><img src="assets/ai-engineering-logo.png" alt="AI Engineering original Welsh dragon logo"></div>
+    </div>
+  </section>
+
+  <section class="section dark" id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Contact</div>
+        <h2>Talk to AI Engineering.</h2>
+        <p>For project enquiries and further information, get in touch.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-box">
+          <h3>Find us</h3>
+          <p><strong>AI Engineering</strong></p>
+          <p>Birchgrove, Swansea<br>Wales, United Kingdom</p>
+        </div>
+        <div class="contact-box">
+          <h3>Contact details</h3>
+          <p>Phone: 01792 555 014</p>
+          <p>Mobile: 07700 900 123</p>
+          <p>Email: info@aiengineeringwales.co.uk</p>
+          <p class="placeholder">DEMO DETAILS — these are placeholders, not verified contact details. Replace them before publishing the site.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© <span id="year">2026</span> AI Engineering · Birchgrove, Swansea, Wales</span>
+    <span>Automated sheep-shearing project · In development</span>
+  </div>
+</footer>
+</body>
+</html>
